@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о сотрудниках</title>
+    <link type="text/css" href="{% static 'HrBase/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+
+<ul class="treeCSS">
+   {% for c in common_list %}
+       <li>{{ c }}</li> {% endfor %}
+     <ul>
+         {% for p in places_list %}
+       <li>{{ p }}</li>{% endfor %}
+     <ul>
+       {% for d in department_list %}
+       <li>{{ d }}</li>{% endfor %}
+              <ul>{% for s in subdepartment_list %}
+                <li>{{ s }} </li>{% endfor %}
+                       <ul>{% for e in empl_list %}
+                <li>{{ e }}</li>{% endfor %}
+     </ul>
+   </li>
+     </ul>
+   </li>
+</ul>
+</ul>
+</body>
+</html>
